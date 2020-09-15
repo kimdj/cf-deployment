@@ -1840,6 +1840,8 @@ variables:
   options:
     ca: cf_app_sd_ca
     common_name: service-discovery-controller.service.cf.internal
+    alternative_names:
+    - service-discovery-controller.service.cf.internal
     extended_key_usage:
     - client_auth
   type: certificate
@@ -1847,6 +1849,8 @@ variables:
   options:
     ca: cf_app_sd_ca
     common_name: service-discovery-controller.service.cf.internal
+    alternative_names:
+    - service-discovery-controller.service.cf.internal
     extended_key_usage:
     - server_auth
   type: certificate
@@ -1886,6 +1890,8 @@ variables:
   options:
     ca: silk_ca
     common_name: silk-controller.service.cf.internal
+    alternative_names:
+      - silk-controller.service.cf.internal
     extended_key_usage:
     - server_auth
 - name: silk_daemon
@@ -1893,6 +1899,8 @@ variables:
   options:
     ca: silk_ca
     common_name: silk-daemon
+    alternative_names:
+    - silk-daemon
     extended_key_usage:
     - client_auth
 - name: network_policy_ca
@@ -1914,6 +1922,8 @@ variables:
   options:
     ca: network_policy_ca
     common_name: policy-server.service.cf.internal
+    alternative_names:
+    - policy-server.service.cf.internal
     extended_key_usage:
     - server_auth
 - name: network_policy_client
@@ -1921,6 +1931,8 @@ variables:
   options:
     ca: network_policy_ca
     common_name: clientName
+    alternative_names:
+    - clientName
     extended_key_usage:
     - client_auth
 - name: uaa_clients_routing_api_client_secret
@@ -2173,6 +2185,8 @@ variables:
   options:
     ca: routing_api_ca
     common_name: routing-api.service.cf.internal
+    alternative_names:
+    - routing-api.service.cf.internal
     extended_key_usage:
       - server_auth
 - name: routing_api_tls_client
@@ -2180,6 +2194,8 @@ variables:
   options:
     ca: routing_api_ca
     common_name: routing-api-client
+    alternative_names:
+    - routing-api-client
     extended_key_usage:
       - client_auth
 - name: uaa_ca
@@ -2320,6 +2336,8 @@ variables:
   options:
     ca: pxc_server_ca
     common_name: sql-db.service.cf.internal
+    alternative_names:
+    - sql-db.service.cf.internal
 
 - name: loggregator_rlp_gateway_tls
   type: certificate
@@ -2507,7 +2525,9 @@ variables:
   type: certificate
   options:
     ca: nats_ca
-    common_name: "nats_client"
+    common_name: nats_client
+    alternative_names:
+    - nats_client
     extended_key_usage:
     - client_auth
 
@@ -2516,6 +2536,8 @@ variables:
   options:
     ca: nats_ca
     common_name: nats.service.cf.internal
+    alternative_names:
+    - nats.service.cf.internal
     extended_key_usage:
     - server_auth
   consumes:
